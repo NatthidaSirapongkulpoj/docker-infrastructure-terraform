@@ -1,0 +1,12 @@
+services:
+  web:
+    container_name: myportfolio
+
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+
+    ports:
+      - "8080:80"
+
+    restart: unless-stopped

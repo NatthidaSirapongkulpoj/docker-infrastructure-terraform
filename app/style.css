@@ -1,0 +1,45 @@
+body{
+
+    background:#0f172a;
+
+    color:white;
+
+    font-family:Arial;
+
+    margin:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+}
+
+.container{
+
+    text-align:center;
+
+    width:700px;
+
+}
+
+h1{
+
+    color:#38bdf8;
+
+}
+
+.status{
+
+    margin-top:40px;
+
+    background:#1e293b;
+
+    padding:30px;
+
+    border-radius:12px;
+
+}
