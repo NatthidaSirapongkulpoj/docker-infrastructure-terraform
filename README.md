@@ -30,7 +30,7 @@ The project deploys a static portfolio website running on **Nginx** inside a Doc
 
 # 🏗 Solution Architecture
 
-![Architecture Diagram](architecture/aws-static-site.png)
+![Architecture Diagram](architecture/architecture-diagram.png)
 
 ---
 
