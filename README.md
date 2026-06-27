@@ -1,15 +1,9 @@
-# 🚀 Docker Infrastructure with Terraform
+# 🚀 Terraform + Docker Infrastructure
 
-<p align="center">
-
-![Terraform](https://img.shields.io/badge/Terraform-v1.5+-623CE4?style=for-the-badge&logo=terraform)
-![Docker](https://img.shields.io/badge/Docker-Engine-2496ED?style=for-the-badge&logo=docker)
-![Nginx](https://img.shields.io/badge/Nginx-Latest-009639?style=for-the-badge&logo=nginx)
-![Infrastructure as Code](https://img.shields.io/badge/Infrastructure-as-Code-blue?style=for-the-badge)
-![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-2088FF?style=for-the-badge&logo=githubactions)
-![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
-
-</p>
+![Terraform](https://img.shields.io/badge/Terraform-Infrastructure_as_Code-7B42BC?style=for-the-badge\&logo=terraform)
+![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED?style=for-the-badge\&logo=docker)
+![Nginx](https://img.shields.io/badge/Nginx-Web_Server-009639?style=for-the-badge\&logo=nginx)
+![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=for-the-badge\&logo=github)
 
 ---
 
@@ -17,72 +11,26 @@
 
 This project demonstrates how to provision and manage containerized infrastructure using **Terraform** and **Docker** following Infrastructure as Code (IaC) principles.
 
-The application is a lightweight static website served by **Nginx** inside a Docker container. Terraform manages the Docker image and container lifecycle through declarative configuration.
+Instead of manually creating Docker images and containers, Terraform automates the complete deployment workflow, making infrastructure repeatable, version-controlled, and easy to manage.
 
-This repository is designed as a portfolio project for:
-
-- Cloud Engineer
-- DevOps Engineer
-- Platform Engineer
-- Infrastructure Engineer
-- AWS Solutions Architect
+The project deploys a static portfolio website running on **Nginx** inside a Docker container.
 
 ---
 
 # 🎯 Project Objectives
 
-- Demonstrate Infrastructure as Code (IaC)
-- Deploy Docker containers with Terraform
-- Serve a static website using Nginx
-- Build reusable infrastructure
-- Showcase Cloud Engineering skills
-- Demonstrate DevOps best practices
+* Learn Infrastructure as Code (IaC) using Terraform
+* Build and deploy Docker images
+* Provision Docker containers with Terraform
+* Configure an Nginx web server
+* Manage infrastructure through version control
+* Develop a professional Cloud Engineer portfolio project
 
 ---
 
-# ✨ Features
+# 🏗 Solution Architecture
 
-- Infrastructure as Code (Terraform)
-- Docker Container Deployment
-- Nginx Web Server
-- Static Website Hosting
-- Docker Compose Support
-- Terraform Variables
-- Terraform Outputs
-- Infrastructure Automation
-- GitHub Actions Ready
-- Cloud Portfolio Ready
-
----
-
-# 🏗 Architecture
-
-```text
-                   Browser
-                       │
-             http://localhost:9090
-                       │
-                       ▼
-               Docker Engine
-                       │
-                       ▼
-            Docker Container
-                 (Nginx)
-                       │
-                       ▼
-             Static Website
-
-Terraform CLI
-      │
-      ▼
-Docker Provider
-      │
-      ▼
-Docker API
-      │
-      ▼
-Docker Engine
-```
+![Architecture Diagram](architecture/aws-static-site.png)
 
 ---
 
@@ -90,316 +38,228 @@ Docker Engine
 
 ```text
 docker-infrastructure-terraform/
-
+│
 ├── app/
 │   ├── index.html
 │   └── style.css
 │
 ├── architecture/
-│   ├── architecture.md
-│   ├── architecture.png
-│   └── architecture.drawio
+│   ├── aws-static-site.drawio
+│   ├── aws-static-site.png
+│   └── architecture-notes.md
 │
 ├── docker/
 │   ├── Dockerfile
-│   ├── nginx.conf
-│   └── .dockerignore
+│   └── nginx.conf
 │
 ├── docs/
 │   ├── deployment-guide.md
-│   ├── troubleshooting.md
-│   └── project-summary.md
+│   ├── lessons-learned.md
+│   ├── project-summary.md
+│   └── troubleshooting.md
 │
 ├── screenshots/
-│   ├── homepage.png
-│   ├── docker-ps.png
+│   ├── docker-build-success.png
+│   ├── docker-container-running.png
+│   ├── terraform-plan.png
 │   ├── terraform-apply.png
-│   ├── terraform-output.png
-│   └── architecture.png
+│   ├── docker-ps.png
+│   └── docker-website-live.png
 │
 ├── terraform/
 │   ├── versions.tf
 │   ├── variables.tf
-│   ├── main.tf
-│   ├── outputs.tf
 │   ├── terraform.tfvars
-│   └── .terraform.lock.hcl
+│   ├── main.tf
+│   └── outputs.tf
 │
 ├── compose.yaml
 ├── README.md
-├── CHANGELOG.md
 ├── LICENSE
-└── .gitignore
+└── CHANGELOG.md
 ```
 
 ---
 
-# 🛠 Technology Stack
+# ⚙ Technologies Used
 
-| Category | Technology |
-|----------|------------|
-| Infrastructure as Code | Terraform |
-| Containerization | Docker |
-| Web Server | Nginx |
-| Frontend | HTML5 |
-| Styling | CSS3 |
-| Container Orchestration | Docker Compose |
-| Version Control | Git |
-| Repository | GitHub |
-| CI/CD | GitHub Actions |
-
----
-
-# ⚙ Prerequisites
-
-Install the following software before running this project.
-
-- Docker Desktop
-- Terraform 1.5+
-- Git
-- Visual Studio Code
-
-Verify installation
-
-```bash
-docker --version
-
-terraform --version
-
-git --version
-```
+| Technology     | Purpose                       |
+| -------------- | ----------------------------- |
+| Terraform      | Infrastructure as Code        |
+| Docker         | Containerization              |
+| Docker Compose | Local container orchestration |
+| Nginx          | Static web server             |
+| HTML5          | Static website                |
+| CSS3           | Website styling               |
+| Git            | Version control               |
+| GitHub         | Source code repository        |
 
 ---
 
-# 🚀 Quick Start (Docker Compose)
+# 🚀 Deployment Workflow
 
-Clone the repository
-
-```bash
-git clone https://github.com/<your-github-username>/docker-infrastructure-terraform.git
-
-cd docker-infrastructure-terraform
-```
-
-Build and start the application
-
-```bash
-docker compose up -d
-```
-
-Verify the container
-
-```bash
-docker ps
-```
-
-Open your browser
-
-```
-http://localhost:8080
-```
-
-Stop the application
-
-```bash
-docker compose down
+```text
+Developer
+     │
+     ▼
+Git Repository
+     │
+     ▼
+Terraform Init
+     │
+     ▼
+Terraform Plan
+     │
+     ▼
+Terraform Apply
+     │
+     ▼
+Docker Image Build
+     │
+     ▼
+Docker Container
+     │
+     ▼
+Nginx Web Server
+     │
+     ▼
+Static Portfolio Website
 ```
 
 ---
 
-# ☁ Deploy Infrastructure using Terraform
+# 📸 Project Screenshots
 
-Navigate to the Terraform directory
+## Docker Image Build
 
-```bash
-cd terraform
-```
-
-Initialize Terraform
-
-```bash
-terraform init
-```
-
-Review the execution plan
-
-```bash
-terraform plan
-```
-
-Deploy infrastructure
-
-```bash
-terraform apply
-```
-
-Verify resources
-
-```bash
-terraform state list
-```
-
-Display outputs
-
-```bash
-terraform output
-```
-
-Open the deployed application
-
-```
-http://localhost:9090
-```
+![Docker Build](screenshots/docker-build-success.png)
 
 ---
 
-# ✅ Verification Commands
+## Docker Container Running
 
-Verify Docker container
-
-```bash
-docker ps
-```
-
-Inspect Terraform state
-
-```bash
-terraform state list
-```
-
-View Terraform outputs
-
-```bash
-terraform output
-```
-
-Inspect Docker logs
-
-```bash
-docker logs terraform-portfolio
-```
+![Docker Container](screenshots/docker-container-running.png)
 
 ---
 
-# 📸 Screenshots
+## Terraform Plan
 
-Add screenshots after deployment.
+![Terraform Plan](screenshots/terraform-plan.png)
 
-```
-screenshots/
-
-homepage.png
-
-docker-ps.png
-
-terraform-apply.png
-
-terraform-output.png
-
-architecture.png
-```
-
-Example:
-
-```markdown
-## Home Page
-
-![Homepage](screenshots/homepage.png)
-
-## Docker Container
-
-![Docker](screenshots/docker-ps.png)
+---
 
 ## Terraform Apply
 
 ![Terraform Apply](screenshots/terraform-apply.png)
 
-## Terraform Output
+---
 
-![Terraform Output](screenshots/terraform-output.png)
+## Docker Container Status
+
+![Docker PS](screenshots/docker-ps.png)
+
+---
+
+## Live Website
+
+![Live Website](screenshots/docker-website-live.png)
+
+---
+
+# 💻 How to Run This Project
+
+## Clone Repository
+
+```bash
+git clone https://github.com/NatthidaSirapongkulpoj/docker-infrastructure-terraform.git
 ```
 
 ---
 
-# 🔄 CI/CD Pipeline
+## Navigate to Project
 
-This repository is designed to support GitHub Actions.
-
-Pipeline stages:
-
-- Checkout Source Code
-- Terraform Format Check
-- Terraform Validate
-- Terraform Plan
-- Docker Build
-- Docker Image Validation
-
-Future enhancements:
-
-- Push Docker Image to Docker Hub
-- Deploy to AWS
-- Deploy to Azure
-- Deploy to Google Cloud
+```bash
+cd docker-infrastructure-terraform
+```
 
 ---
 
-# 🔒 Security Considerations
+## Build Docker Image
 
-- Infrastructure managed through Terraform
-- Docker image built from official Nginx image
-- Reproducible Infrastructure
-- Version controlled configuration
-- Immutable deployment approach
+```bash
+docker build -f docker/Dockerfile -t docker-infrastructure-terraform:v1 .
+```
 
 ---
 
-# 📈 Skills Demonstrated
+## Run Container
 
-This project demonstrates the following professional skills:
-
-- Infrastructure as Code (IaC)
-- Terraform
-- Docker
-- Nginx
-- Linux Containers
-- Cloud Infrastructure
-- DevOps
-- Git
-- GitHub
-- CI/CD Concepts
-- Automation
-- Infrastructure Provisioning
+```bash
+docker run -d -p 8080:80 --name myportfolio docker-infrastructure-terraform:v1
+```
 
 ---
 
-# 🚀 Future Improvements
+## Docker Compose
 
-- GitHub Actions CI/CD
-- Docker Hub Integration
-- AWS EC2 Deployment
-- Amazon ECS Deployment
-- Amazon EKS Deployment
-- Terraform Remote State
-- Terraform Workspaces
-- HTTPS Support
-- Load Balancer
-- Monitoring with Prometheus
-- Grafana Dashboard
+```bash
+docker compose up --build -d
+```
 
 ---
 
-# 📚 Lessons Learned
+## Terraform Deployment
 
-Throughout this project, the following concepts were practiced:
+```bash
+cd terraform
 
-- Infrastructure as Code
-- Terraform Resource Management
-- Docker Image Management
-- Docker Container Deployment
-- Static Website Hosting
-- Nginx Configuration
-- Infrastructure Automation
-- Troubleshooting Docker and Terraform integration
+terraform init
+
+terraform plan
+
+terraform apply
+```
+
+---
+
+## Verify Deployment
+
+```bash
+docker ps
+
+terraform output
+```
+
+---
+
+# 📚 Skills Demonstrated
+
+* Infrastructure as Code (Terraform)
+* Docker Image Management
+* Docker Container Deployment
+* Docker Networking
+* Nginx Configuration
+* Static Website Hosting
+* Infrastructure Provisioning
+* Git & GitHub Workflow
+* Linux Container Fundamentals
+* Cloud Infrastructure Design
+* Infrastructure Documentation
+* Technical Troubleshooting
+
+---
+
+# 📖 Lessons Learned
+
+Throughout this project, I gained practical experience in:
+
+* Writing Infrastructure as Code using Terraform
+* Building production-ready Docker images
+* Deploying and managing Docker containers
+* Configuring Nginx as a web server
+* Managing infrastructure through version control
+* Troubleshooting Docker and Terraform deployment issues
+* Organizing cloud infrastructure projects following industry best practices
 
 ---
 
@@ -407,9 +267,15 @@ Throughout this project, the following concepts were practiced:
 
 **Natthida Sirapongkulpoj**
 
-Cloud Engineer | Solutions Architect
+Aspiring Cloud Engineer | AWS Solutions Architect | DevOps Enthusiast
+
+GitHub
+
+https://github.com/NatthidaSirapongkulpoj
 
 
 # ⭐ Support
 
-If you found this project useful, please consider giving it a ⭐ on GitHub.
+If you found this project helpful or interesting, please consider giving it a ⭐ on GitHub.
+
+Thank you for visiting this repository!
