@@ -1,5 +1,5 @@
 resource "docker_image" "portfolio" {
-  name = var.image_name
+  name         = var.image_name
   keep_locally = true
 }
 
